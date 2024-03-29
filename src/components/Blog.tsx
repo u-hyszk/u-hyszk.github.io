@@ -11,19 +11,29 @@ import { FaLaptopCode } from "react-icons/fa";
 import { MdFlightTakeoff } from "react-icons/md";
 import { FaBaseballBall } from "react-icons/fa";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Chatbot from 'react-chatbot-kit'
+import 'react-chatbot-kit/build/main.css';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';  
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import kobeImg from './imgs/kobe-hyszk.jpg';
-import itachiImg from './imgs/u-hyszk.jpg';
+import kobeImg from '../imgs/kobe-hyszk.jpg';
+import itachiImg from '../imgs/u-hyszk.jpg';
 import publications from './markdown/publications.md';
 import awards from './markdown/awards.md';
 import education from './markdown/education.md';
 import internship from './markdown/internship.md';
 import skills from './markdown/skills.md';
 import qualifications from './markdown/qualifications.md';
+import { ChatbotConfig }  from '../chatbot/ChatbotConfig';
+import { MessageParser } from '../chatbot/Messageparser';
+import { ActionProvider } from '../chatbot/ActionProvider';
+import { Avatar } from '@mui/material';
+import { IconButton } from '@mui/material';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import CloseIcon from '@mui/icons-material/Close';
+import './Blog.css';
 
 
 const sections = [
@@ -72,6 +82,9 @@ const theme = createTheme();
 
 export default function Blog() {
 
+  // for chatbot
+  const [showChatbot, setShowChatbot] = React.useState(false);
+
   // for markdown rendering
   const [posts, setPosts] = React.useState<Array<any>>([]);
   React.useEffect(() => {
@@ -117,6 +130,40 @@ export default function Blog() {
         title="Yu Hayashizaki / u-hyszk"
         description="Email: hayashizaki.yu.t5[at]dc.tohoku.ac.jp"
       />
+      <div
+        style={{
+          position: 'fixed',
+          bottom: '80px',
+          right: '40px',
+          zIndex: 100,
+          display: showChatbot ? 'block' : 'none',
+        }}
+      >
+        <Chatbot
+          config={ChatbotConfig}
+          messageParser={MessageParser}
+          actionProvider={ActionProvider}
+          headerText='Q&A'
+          placeholderText='質問を入力'
+        />
+      </div>
+
+      <IconButton
+        style={{
+          width: '50px',
+          height: '50px',
+          position: 'fixed',
+          bottom: '15px',
+          right: '40px',
+          zIndex: 100,
+          fontSize: '24px',
+          fontWeight: 'bold',
+          backgroundColor: '#2898ec',
+        }}
+        onClick={() => setShowChatbot(!showChatbot)}
+      >
+        {showChatbot ? <CloseIcon color="inherit" /> : <QuestionMarkIcon />}
+      </IconButton>
     </ThemeProvider>
   );
 }
