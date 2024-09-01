@@ -63,9 +63,9 @@ const mainFeaturedPost = {
 const sidebar = {
   interests: [
     '人工知能の社会実装 / 社会課題解決',
+    '音声感情認識',
     '自然言語処理 (LLM・高速化・評価)',
-    '音声対話',
-    'マルチモーダル',
+    '音声対話システム',
   ],
   hobbys: [
     { description: 'ゲーム', icon: IoGameController },
