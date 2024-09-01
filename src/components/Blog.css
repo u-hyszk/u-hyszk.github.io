@@ -1,0 +1,10 @@
+.react-chatbot-kit-chat-bot-avatar-icon {
+    width: 400px;
+    height: 18.5px;
+}
+
+.react-chatbot-kit-chat-bot-message-container {
+    display: flex;
+    margin: 20px 0;
+    justify-content: flex-start;
+}

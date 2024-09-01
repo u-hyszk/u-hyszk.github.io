@@ -28,7 +28,7 @@ export default function Sidebar(props: SidebarProps) {
             <ListItem>{interest}</ListItem>
           ))}
         </List>
-        <Typography variant="h6" gutterBottom sx={{ mt: 3 }}> Hobbys </Typography>
+        <Typography variant="h6" gutterBottom sx={{ mt: 3 }}> Hobby </Typography>
         <List>
           {hobbys.map((hobby) => (
             <ListItem>
@@ -39,7 +39,7 @@ export default function Sidebar(props: SidebarProps) {
             </ListItem>
           ))}
         </List>
-        <Typography variant="h6" gutterBottom sx={{ mt: 3 }}> Miscs </Typography>
+        <Typography variant="h6" gutterBottom sx={{ mt: 3 }}> Misc </Typography>
         <List>
           {miscs.map((misc) => (
             <ListItem>{misc}</ListItem>
