@@ -21,6 +21,7 @@ import Footer from './Footer';
 import kobeImg from '../imgs/kobe-hyszk.jpg';
 import itachiImg from '../imgs/u-hyszk.jpg';
 import publications from './markdown/publications.md';
+import competitions from './markdown/competitions.md';
 import awards from './markdown/awards.md';
 import education from './markdown/education.md';
 import internship from './markdown/internship.md';
@@ -39,10 +40,11 @@ import './Blog.css';
 const sections = [
   { title: '研究発表 / Publications', url: '#M0' },
   { title: '受賞 / Awards', url: '#M1' },
-  { title: '学歴 / Education', url: '#M2' },
-  { title: 'インターンシップ他 / Internship', url: '#M3' },
-  { title: 'スキル / Skills', url: '#M4' },
-  { title: '資格 / Qualifications', url: '#M5' },
+  { title: 'インターンシップ / Internship', url: '#M2' },
+  { title: 'コンペティション / competitions', url: '#M3' },
+  { title: '学歴 / Education', url: '#M4' },
+  { title: 'スキル / Skills', url: '#M5' },
+  { title: '資格 / Qualifications', url: '#M6' },
   { title: '連絡先 / Contact', url: '#footer' },
 ];
 
@@ -50,7 +52,7 @@ const mainFeaturedPost = {
   title: '林崎 由',
   affiliation: "東北大学大学院 工学研究科",
   specialized: "通信工学専攻",
-  grade: "修士1年",
+  grade: "修士2年",
   image: kobeImg,
   imageText: 'main image description',
   social: [
@@ -63,7 +65,7 @@ const mainFeaturedPost = {
 const sidebar = {
   interests: [
     '人工知能の社会実装 / 社会課題解決',
-    '音声感情認識',
+    '音声信号処理 (感情認識)',
     '自然言語処理 (LLM・高速化・評価)',
     '音声対話システム',
   ],
@@ -74,7 +76,7 @@ const sidebar = {
     { description: '野球 (〜中学校)', icon: FaBaseballBall },
   ],
   miscs: [
-    'あだ名は「イタチ」です',
+    // 'あだ名は「イタチ」です',
   ],
 };
 
@@ -91,8 +93,9 @@ export default function Blog() {
     Promise.all([
       axios.get(publications),
       axios.get(awards),
-      axios.get(education),
       axios.get(internship),
+      axios.get(competitions),
+      axios.get(education),
       axios.get(skills),
       axios.get(qualifications)
     ]).then((res: AxiosResponse[]) => {
@@ -128,7 +131,7 @@ export default function Blog() {
       </Container>
       <Footer
         title="Yu Hayashizaki / u-hyszk"
-        description="Email: hayashizaki.yu.t5[at]dc.tohoku.ac.jp"
+        description="Email: hayashizaki.yu[at]gmail.com"
       />
       <div
         style={{
@@ -139,16 +142,16 @@ export default function Blog() {
           display: showChatbot ? 'block' : 'none',
         }}
       >
-        <Chatbot
+        {/* <Chatbot
           config={ChatbotConfig}
           messageParser={MessageParser}
           actionProvider={ActionProvider}
           headerText='Q&A'
           placeholderText='質問を入力'
-        />
+        /> */}
       </div>
 
-      <IconButton
+      {/* <IconButton
         style={{
           width: '50px',
           height: '50px',
@@ -163,7 +166,7 @@ export default function Blog() {
         onClick={() => setShowChatbot(!showChatbot)}
       >
         {showChatbot ? <CloseIcon color="inherit" /> : <QuestionMarkIcon />}
-      </IconButton>
+      </IconButton> */}
     </ThemeProvider>
   );
 }
