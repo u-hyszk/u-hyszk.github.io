@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.62c27d28.css",
-    "main.js": "/static/js/main.ddd1bf50.js",
+    "main.js": "/static/js/main.e3f4c845.js",
     "static/media/kobe-hyszk.jpg": "/static/media/kobe-hyszk.79419b709951f5a816f6.jpg",
     "static/media/u-hyszk.jpg": "/static/media/u-hyszk.074e12bc8479b576a4df.jpg",
-    "static/media/publications.md": "/static/media/publications.7137bb5810190302221a.md",
+    "static/media/publications.md": "/static/media/publications.ee49b3f0ff8b723e3e26.md",
     "static/media/internship.md": "/static/media/internship.d1711d6f5be3d14f9a84.md",
     "index.html": "/index.html",
     "static/media/competitions.md": "/static/media/competitions.5110bf543068d3586cfa.md",
+    "static/media/awards.md": "/static/media/awards.d2b65720da188953cd5d.md",
     "static/media/education.md": "/static/media/education.1152802d4a7a8cb6f39e.md",
-    "static/media/awards.md": "/static/media/awards.a534a3ec69d71f5af4ff.md",
     "static/media/skills.md": "/static/media/skills.39f9106f44cff9931d6b.md",
     "static/media/qualifications.md": "/static/media/qualifications.655de6e87580182129dd.md",
     "main.62c27d28.css.map": "/static/css/main.62c27d28.css.map",
-    "main.ddd1bf50.js.map": "/static/js/main.ddd1bf50.js.map"
+    "main.e3f4c845.js.map": "/static/js/main.e3f4c845.js.map"
   },
   "entrypoints": [
     "static/css/main.62c27d28.css",
-    "static/js/main.ddd1bf50.js"
+    "static/js/main.e3f4c845.js"
   ]
 }
